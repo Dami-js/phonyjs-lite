@@ -49,7 +49,7 @@ inquirer
     // Use user feedback for... whatever!!
     const cwd = process.cwd();
     const dir = path.join(cwd, `/${answers.appName}`);
-    const packageFolder = path.join(path.basename(path.dirname('./index.js')), 'src/package');
+    const packageFolder = 'src/package';
 
     createAppFolder(dir)
     copyPackageFilesToAppFolder(packageFolder, dir)
