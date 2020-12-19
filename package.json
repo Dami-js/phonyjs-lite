@@ -1,0 +1,32 @@
+{
+  "name": "phonyjs-lite",
+  "version": "0.0.1",
+  "description": "A Nodejs(Express) server application built with typescript",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dami-js/phonyjs-lite.git"
+  },
+  "keywords": [
+    "typescript",
+    "phonyjs-lite",
+    "nodejs",
+    "express",
+    "ts",
+    "framework"
+  ],
+  "author": "Damilola Seweje",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dami-js/phonyjs-lite/issues"
+  },
+  "homepage": "https://github.com/Dami-js/phonyjs-lite#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "ncp": "^2.0.0"
+  }
+}
