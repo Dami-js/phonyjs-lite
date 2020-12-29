@@ -1,0 +1,50 @@
+<h1>Welcome to {{title}}</h1>
+<p>A realtime progressive Node.js structure for creating scalable, secure and server-side applications.</p>
+<p id="note"></p>
+<ul id="posts">
+
+</ul>
+
+<button id="fetchPost">Fetch posts</button>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  const API_URL = '/api/v1/';
+  const query = 
+    `query {
+      getPosts {
+        _id
+        title
+        body
+      }
+    }`;
+  const listContainer = document.querySelector('#posts');
+  const note = document.querySelector('#note');
+  const fetchPost = document.querySelector('#fetchPost');
+
+  const fetchv1 = async function(options) {
+    const data = await axios({...options})
+    return data.data;
+  };
+
+  fetchPost.addEventListener('click', () => {
+          note.innerHTML = 'Loading posts...'
+    fetchv1({url: API_URL, method: 'post', data: {query}})
+      .then(data => {
+        if(!data.data || data.data.getPosts == []) {
+          note.innerHTML = 'No post fonund'
+        } else {
+          data.data.getPosts.map((post, idx) => {
+            const li = document.createElement('li');
+            li.innerHTML = `<h3>${post.title}</h3> <p> ${post.body} </p>`;
+            listContainer.appendChild(li)
+          })
+          fetchPost.disabled = true;
+        note.innerHTML = 'Done! Fetched all posts'
+        }
+
+      })
+      .catch(err => console.log(err));
+  })
+
+</script>

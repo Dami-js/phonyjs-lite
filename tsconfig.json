@@ -12,7 +12,21 @@
     // "strict": true,
     /* Module Resolution Options */
     "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
-    "baseUrl": "./src",
+    "baseUrl": "./",
+    "paths": {
+      "@controllers/*": ["src/controllers/*"],
+      "@config/*": ["src/config/*"],
+      "@db/*": ["src/db/*"],
+      "@entities/*": ["src/entities/*"],
+      "@graphql/*": ["src/graphql/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@models/*": ["src/models/*"],
+      "@resolvers/*": ["src/resolvers/*"],
+      "@services/*": ["src/services/*"],
+      "@routes/*": ["src/routes/*"],
+      "@shared/*": ["src/shared/*"]
+    },
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
